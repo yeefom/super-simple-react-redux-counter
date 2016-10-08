@@ -2,14 +2,19 @@ import React, {PropTypes} from 'react';
 
 Counter.propTypes = {
   count: PropTypes.number.isRequired,
-  handleClick: PropTypes.func.isRequired
+  handleClick: PropTypes.func.isRequired,
+  setInitCount: PropTypes.func.isRequired
 };
 
-export default function Counter({count, handleClick}) {
+export default function Counter(props) {
   return (
     <div>
-      count: {count}
-      <button onClick={handleClick}>
+      <input
+        onChange={props.setInitCount}
+        value={props.count}
+      />
+      count: {props.count}
+      <button onClick={props.handleClick}>
         increase
       </button>
     </div>

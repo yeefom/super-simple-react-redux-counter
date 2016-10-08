@@ -10,6 +10,7 @@ class Container extends Component {
       <Counter
         count={this.props.count}
         handleClick={this.props.increase}
+        setInitCount={e => this.props.setInitCount(+e.target.value)}
       />
     );
   }
